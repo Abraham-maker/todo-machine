@@ -10,3 +10,9 @@ root.render(
   </React.StrictMode>
 );
 
+// ReactDOM.createPortal(document.getElementById('modal'));
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );

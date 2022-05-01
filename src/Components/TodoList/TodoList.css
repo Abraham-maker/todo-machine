@@ -1,4 +1,5 @@
 section{
+  margin: auto !important;
   padding: 15px 0px 30px 0px;
   max-height: 500px;
   overflow: hidden;
@@ -9,3 +10,10 @@ ul {
   width: 60%;
   list-style: none;
 }
+
+@media only screen and (max-width: 660px) {
+  ul {
+    width: 100%;
+  }
+}
+

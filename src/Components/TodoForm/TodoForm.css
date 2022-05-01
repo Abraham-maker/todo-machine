@@ -1,0 +1,68 @@
+*{
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+form {
+    width: 90%;
+    max-width: 300px;
+    background-color: rgb(17, 17, 17);
+    padding: 33px 40px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+  
+  label {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 26px;
+  }
+  
+  .inputForm {
+    font-size: 18px;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #202329;
+    color: white;
+    height: 50px;
+    border: none;
+  }
+  
+  .inputForm::placeholder {
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: 600;
+  }
+  
+  .TodoForm-buttonContainer {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .TodoForm-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    color: #202329;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 2px;
+    border: none;
+    font-family: 'Montserrat';
+  }
+  
+  .TodoForm-button-add {
+    background-color: #61DAFA;
+    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+  }
+  
+  .TodoForm-button-cancel {
+    background: transparent;
+    color: #fff;
+  }
+  
