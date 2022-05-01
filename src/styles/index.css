@@ -27,6 +27,7 @@ body {
   height: 5rem;
 }
 .fancy-spinner div {
+  margin-top: 150px !important;
   position: absolute;
   width: 4rem;
   height: 4rem;
