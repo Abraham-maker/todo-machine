@@ -3,22 +3,20 @@ import { useState } from "react";
 import "./App.css";
 import AppUI from "./AppUI";
 
-
 function App() {
-
   const todot = [
-        { text: "Ver curso en platzi", completed: false },
-        { text: "Leer un libro", completed: false },
-        { text: "Terminar de comer", completed: false },
-  ]
+    { text: "Ver curso en platzi", completed: false },
+    { text: "Leer un libro", completed: false },
+   
+  ];
 
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  const localStorageTodos = localStorage.getItem("TODOS_V1");
   let parsedTodos;
 
-  if(!localStorageTodos ){
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+  if (!localStorageTodos) {
+    localStorage.setItem("TODOS_V1", JSON.stringify([]));
     parsedTodos = [];
-  }else{
+  } else {
     parsedTodos = JSON.parse(localStorageTodos);
   }
 
@@ -42,9 +40,9 @@ function App() {
 
   const saveTodos = (newTodos) => {
     const stingifyTodos = JSON.stringify(newTodos);
-    localStorage.setItem('TODOS_V1', stingifyTodos);
+    localStorage.setItem("TODOS_V1", stingifyTodos);
     setTodos(newTodos);
-  }
+  };
 
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text == text);
@@ -61,14 +59,14 @@ function App() {
   };
 
   return (
-    <AppUI 
-    completedTodos={completedTodos}
-    totalTodos={totalTodos}
-    serchedTodos={serchedTodos}
-    completeTodo={completeTodo}
-    deleteTodo={deleteTodo}
-    setSearchValue={setSearchValue}
-    searchValue={searchValue}
+    <AppUI
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      serchedTodos={serchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+      setSearchValue={setSearchValue}
+      searchValue={searchValue}
     />
   );
 }
