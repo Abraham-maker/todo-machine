@@ -1,0 +1,26 @@
+.TodoCounter {
+    padding: 55px 0px 0px 0px;
+  }
+
+  .Title{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    margin: 0rem 0 3rem;
+    color: #ffffff;
+    font-family: 'Hind Siliguri', sans-serif;
+  }
+
+  .styling{
+    font-weight: 800;
+    color: rgb(0, 255, 0);
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 50;
+  margin: 1rem 0 3rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Hind Siliguri', sans-serif;
+}
