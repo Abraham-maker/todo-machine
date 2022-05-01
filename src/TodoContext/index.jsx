@@ -37,7 +37,11 @@ function TodoProvider(props) {
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text == text);
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+    if (!!newTodos[todoIndex].completed) {
+      newTodos[todoIndex].completed = false;
+    } else if (!newTodos[todoIndex].completed) {
+      newTodos[todoIndex].completed = true;
+    }
     saveTodos(newTodos);
   };
 
