@@ -22,33 +22,38 @@ function AppUI() {
 
   return (
     <React.Fragment>
-      <div className="container">
-        <TodoCounter />
-        <TodoSearch />
-        <TodoList>
-          {error && <p>OH OH... Tuvimos un error</p>}
-          {loading && <div className="loader"></div>}
-          {!loading && !serchedTodos.length && <p className="loading">Crea tu primera <span className="TODO">TODO!</span>...</p>}
-
-          {serchedTodos.map((todo) => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-              onComplete={() => completeTodo(todo.text)}
-              onDelete={() => deleteTodo(todo.text)}
-            />
-          ))}
-        </TodoList>
-        {!!openModal && (
-          <Modal>
-          <TodoFrom />
-          </Modal>
+      <TodoCounter />
+      <TodoSearch />
+      <TodoList>
+        {error && <p>OH OH... Tuvimos un error</p>}
+        {serchedTodos.map((todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        ))}
+      </TodoList>
+      {loading && (
+          <div class="fancy-spinner">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="dot"></div>
+          </div>
         )}
-        <CreateTodoButtom 
-        setOpenModal={setOpenModal}
-        />
-      </div>
+      {!loading && !serchedTodos.length && (
+        <p className="loading">
+          Crea tu primera <span className="TODO">TODO!</span>...
+        </p>
+      )}
+      {!!openModal && (
+        <Modal>
+          <TodoFrom />
+        </Modal>
+      )}
+      <CreateTodoButtom setOpenModal={setOpenModal} />
     </React.Fragment>
   );
 }

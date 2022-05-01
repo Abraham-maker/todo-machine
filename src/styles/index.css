@@ -2,19 +2,13 @@ body {
   background-color: rgb(17, 17, 17);
   margin: 0;
   padding: 0;
-
-}
-
-#root {
-  margin: 0 100px;
-  position: relative;
-  min-height: 100vh;
 }
 
 .loading {
+  text-align: center;
+  margin-top:10%;
   color: aliceblue;
   font-weight: 600;
-  text-align: center;
   font-size: 18px;
 }
 
@@ -24,45 +18,42 @@ body {
   font-size: 24px;
 }
 
-
-.loader {
-  margin: auto;
-  margin-top: 50px;
-  position: relative;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, transparent 40%, #00ff00);
-  animation: move 0.8s linear infinite;
+.fancy-spinner {
+  display: flex;
+  margin: auto !important;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
 }
-
-.loader::before {
+.fancy-spinner div {
   position: absolute;
-  content: "";
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  background: #000;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  z-index: 2;
 }
-
-.loader::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(45deg, transparent 40%, #00ff15);
-  filter: blur(20px);
+.fancy-spinner div.ring {
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent;
+  animation: 2s fancy infinite alternate;
 }
-
-@keyframes move {
+.fancy-spinner div.ring:nth-child(1) {
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+.fancy-spinner div.ring:nth-child(2) {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  animation-delay: 1s;
+}
+.fancy-spinner div.dot {
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+}
+@keyframes fancy {
   to {
-    transform: rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
+    transform: rotate(360deg) scale(0.5);
+ }
 }
